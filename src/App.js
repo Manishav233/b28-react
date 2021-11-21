@@ -81,7 +81,7 @@ summary: "The story of The Lion King is the story of a lion cubs journey to adul
                <Route path="/films">
                <Redirect to="/movies"/>
                </Route>
-               <Route path="/movies/:id">
+               <Route path="/movies/:id">Movie Details
                <MovieList movies={movies}/>  
                </Route>
                
