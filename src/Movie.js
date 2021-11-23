@@ -9,7 +9,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import InfoIcon from '@mui/icons-material/Info';
 
-export function Movie({ name, posture, rate, summary,id}) {
+export function Movie({ name, posture, rate, summary,id,deleteButton,editButton}) {
 
   const [show, setShow] = useState(true);
 
@@ -51,7 +51,7 @@ export function Movie({ name, posture, rate, summary,id}) {
 
       <h1 className="movie-summary" style={summaryStyles}>{summary}</h1>
       {/* Conditioning rendering --{show ?<p className="movie-summary">{summary}</p>: " "}</p>} */}
-      <Counter />
+      <Counter /> {deleteButton} {editButton}
       </CardContent>
     </Card>
   );

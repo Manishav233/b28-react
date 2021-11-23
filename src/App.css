@@ -60,6 +60,7 @@ margin: 20px;
   /* background-color:crimson; */
   width:20rem;
   
+  
   }
   
   .movie-specs{
@@ -72,13 +73,13 @@ margin: 20px;
   display:flex;
   gap:20px;
   flex-wrap: wrap;
-  justify-content: space-around;
+justify-content: space-around; 
   }
   
   .counter-container{
   display:flex;
   gap :20px;
-  height: min-content;
+   height: min-content; 
   }
   .likes-dislikes{
   font-size:20px;}
@@ -118,4 +119,9 @@ object-fit: contain;
   .not-found-container{
   text-align: center;
   color:tomato;
+  }
+  
+  .movie-detail-container{
+  padding: 20px;
+ max-width:60%;
   }
