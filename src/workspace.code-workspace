@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\GUVI\\Bootstrap Design"
+		},
+		{
+			"path": "..\\..\\..\\GUVI\\Bootstrap Design 2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Bootstrap Design"
+	}
+}

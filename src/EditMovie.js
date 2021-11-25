@@ -2,22 +2,23 @@ import { useState } from 'react';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { useParams } from "react-router-dom";
 import {useHistory} from 'react-router-dom';
+export function EditMovie({ movies, setMovies }) {
+    const { id } = useParams();
+    const movie = movies[id];
+  const [name, setName] = useState(movie.name);
+  const [poster, setPoster] = useState(movie.poster);
 
-export function AddMovie({ movies, setMovies }) {
+  const [rating, setRating] = useState(movie.rating);
 
-  const [name, setName] = useState("");
-  const [poster, setPoster] = useState("");
-
-  const [rating, setRating] = useState("");
-
-  const [summary, setSummary] = useState("");
-  const [trailer,setTrailer]= useState(" ");
+  const [summary, setSummary] = useState(movie.summary);
+  const [trailer,setTrailer]= useState(movie.trailer);
   const history = useHistory();
-  const addMovie = () => {
-    console.log("Adding movies...", name, poster, rating,trailer, summary);
+  const editMovie = () => {
+    console.log("Editing movies movies...", name, poster, rating,trailer, summary);
     //creating new object
-    const newMovie = {
+    const updatedMovie = {
       name,
       poster,
       rating,
@@ -25,9 +26,13 @@ export function AddMovie({ movies, setMovies }) {
       summary
     };
 
-    console.log(newMovie);
-    setMovies([...movies, newMovie]);
-    history.push("/movies/");
+    console.log(updatedMovie);
+    setMovies([...movies, updatedMovie]);
+    //replace the element in movie list(movie list must be a copy)
+  const copyMovieList=[...movies];
+  copyMovieList[id]=updatedMovie;
+  setMovies(copyMovieList);
+  history.push("/movies/");
   };
   return (
     <div className="add-movie-form">
@@ -58,7 +63,7 @@ export function AddMovie({ movies, setMovies }) {
    
     
 
-      <Button onClick={addMovie} variant="outlined">Add Movie</Button>
+      <Button onClick={editMovie} variant="outlined">Save</Button>
 
 
     </div>

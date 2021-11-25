@@ -20,7 +20,7 @@ import { NotFound } from "./NotFound";
 import { AddMovie } from './AddMovie';
 import { AddColor } from './AddColor';
 
-
+import { EditMovie } from './EditMovie';
 
 
 export default function App() {
@@ -85,8 +85,9 @@ trailer:"https://www.youtube.com/embed/7TavVZMewpY"},
                <Redirect to="/movies"/>
                </Route>
                <Route path="/movies/edit/:id">
-               Edit Movies
-               <MovieDetails movies={movies}/></Route>
+               <EditMovie movies={movies} setMovies={setMovies}/>
+               {/* <MovieDetails movies={movies}/> */}
+               </Route>
                <Route path="/movies/:id">
                <MovieDetails movies={movies}/>
                </Route>

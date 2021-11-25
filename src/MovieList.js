@@ -29,6 +29,8 @@ export function MovieList({ movies ,setMovies}) {
       </IconButton>}
        
       editButton={<IconButton 
+      style={
+      {marginLeft:"auto"}}
         className="edit_button" 
             onClick={()=>history.push("/movies/edit/"+index)
             

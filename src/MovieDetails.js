@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { useParams } from "react-router-dom";
 
+import Button from '@mui/material/Button';
+import {useHistory} from 'react-router-dom';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+
 export function MovieDetails({ movies }) {
   const { id } = useParams();
   const movie = movies[id];
-
+  const history = useHistory();
   const styles = { color: movie.rating > 8 ? "green" : "crimson", fontWeight: "bold" };
   return (
     <div>
@@ -21,6 +25,13 @@ export function MovieDetails({ movies }) {
           <p className="movie-rating" style={styles}>⭐{movie.rating} </p>
         </div>
         <h1 className="movie-summary">{movie.summary}</h1>
+        <Button onClick={()=>{
+ 
+      history.goBack();}}
+      
+      variant="contained" startIcon={<KeyboardBackspaceIcon/>}>
+  Back
+</Button>
       </div>
     </div>);
 }
