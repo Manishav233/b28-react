@@ -18,7 +18,7 @@ export function MovieList({ movies ,setMovies}) {
             onClick={()=>{
             console.log("Deleting",index);
             const deleteIdx=index;
-            const remaining_movies= movies.filter((mv,idx)=>idx!=deleteIdx)
+            const remaining_movies= movies.filter((mv,idx)=>idx!==deleteIdx)
           console.log("remaining",remaining_movies);
          setMovies(remaining_movies);} }  
            aria-label="delete movie"
